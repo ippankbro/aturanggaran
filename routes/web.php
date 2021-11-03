@@ -8,6 +8,7 @@ use App\Http\Controllers\SumberController;
 use App\Http\Controllers\RencanaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PendapatanController;
 use App\Http\Controllers\PengeluaranController;
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,5 @@ Route::get('edit-kategori-{kategori}',[KategoriController::class,'edit'])->middl
 Route::resource('pengeluarans',PengeluaranController::class)->middleware('auth');
 Route::get('pengeluaran-tambah',[PengeluaranController::class,'create'])->middleware('auth');
 Route::get('pengeluaran-edit-{pengeluaran}',[PengeluaranController::class,'edit'])->middleware('auth');
+
+Route::resource('pendapatan', PendapatanController::class);
