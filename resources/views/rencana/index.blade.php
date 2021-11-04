@@ -29,14 +29,14 @@
   </div>
 
   <!-- Container -->
-  <div class="row">
+  <div class="row px-md-3">
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong><h6>{{session('success')}}</h6></strong>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    <table class="table">
+    <table class="table ">
       <thead>
         <tr>
           <th>#</th>

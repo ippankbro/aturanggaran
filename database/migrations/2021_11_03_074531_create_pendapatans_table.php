@@ -17,6 +17,7 @@ class CreatePendapatansTable extends Migration
             $table->id();
             $table->foreignId('sumber_id');
             $table->foreignId('kategori_id');
+            $table->integer('nominal');
             $table->string('catatan');
             $table->foreignId('user_id');
             $table->timestamps();

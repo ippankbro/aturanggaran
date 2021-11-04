@@ -18,7 +18,7 @@
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
 
-        <a class="btn btn-sm btn-outline-primary" href="/pengeluaran-tambah" role="button">Tambah data</a>
+        <a class="btn btn-sm btn-outline-primary" href="/pendapatan-tambah" role="button">Tambah data</a>
         <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
       </div>
       <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
@@ -29,7 +29,7 @@
   </div>
 
   <!-- Container -->
-  <div class="row">
+  <div class="row px-md-3">
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong><h6>{{session('success')}}</h6></strong>
@@ -47,15 +47,15 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($pengeluarans as $pengeluaran)
+        @foreach ($pendapatans as $pendapatan)
         <tr>
           <th>{{$loop->iteration}}</th>
-          <td>{{$pengeluaran->user->name}}</td>
-          <td>{{Str::limit($pengeluaran->catatan,20)}}</td>
-          <td>Rp. {{$pengeluaran->nominal}}</td>
+          <td>{{$pendapatan->user->name}}</td>
+          <td>{{Str::limit($pendapatan->catatan,20)}}</td>
+          <td>Rp. {{$pendapatan->nominal}}</td>
           <td>
-            <a href="pengeluaran-edit-{{$pengeluaran->id}}" class="badge bg-warning me-3"><span data-feather="edit"></span></a>
-            <form action="/pengeluarans/{{$pengeluaran->id}}" method="post" class="d-inline">
+            <a href="pendapatan-edit-{{$pendapatan->id}}" class="badge bg-warning me-3"><span data-feather="edit"></span></a>
+            <form action="/pendapatans/{{$pendapatan->id}}" method="post" class="d-inline">
               @csrf
               @method('delete')
               <button class="badge bg-danger border-0 btn-sm"><span data-feather="trash-2"></span></button>

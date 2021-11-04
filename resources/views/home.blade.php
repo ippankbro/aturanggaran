@@ -27,7 +27,7 @@
         </div>
 
         <!-- Container -->
-        <div class="row">
+        <div class="row px-md-3">
           <div class="col-lg-4">
             <h5>Sumber Kas</h5>
             <table class="table table-striped table-sm">

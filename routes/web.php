@@ -54,4 +54,6 @@ Route::resource('pengeluarans',PengeluaranController::class)->middleware('auth')
 Route::get('pengeluaran-tambah',[PengeluaranController::class,'create'])->middleware('auth');
 Route::get('pengeluaran-edit-{pengeluaran}',[PengeluaranController::class,'edit'])->middleware('auth');
 
-Route::resource('pendapatan', PendapatanController::class);
+Route::resource('pendapatans', PendapatanController::class)->middleware('auth');
+Route::get('pendapatan-tambah',[PendapatanController::class,'create'])->middleware('auth');
+Route::get('pendapatan-edit-{pendapatan}',[PendapatanController::class,'edit'])->middleware('auth');
