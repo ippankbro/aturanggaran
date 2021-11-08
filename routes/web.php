@@ -38,9 +38,9 @@ Route::get('sumber-tambah', [SumberController::class, 'create'])->middleware('au
 Route::resource('sumbers', SumberController::class)->middleware('auth');
 
 
-Route::resource('users', UserController::class)->middleware('auth');
-Route::get('user-tambah',[UserController::class,'create'] )->middleware('auth');
-Route::get('edit-user-{user}',[UserController::class,'edit'])->middleware('auth');
+// Route::resource('users', UserController::class)->middleware('auth');
+// Route::get('user-tambah',[UserController::class,'create'] )->middleware('auth');
+// Route::get('edit-user-{user}',[UserController::class,'edit'])->middleware('auth');
 
 
 Route::resource('rencanas',RencanaController::class)->middleware('auth');
@@ -59,4 +59,11 @@ Route::resource('pendapatans', PendapatanController::class)->middleware('auth');
 Route::get('pendapatan-tambah',[PendapatanController::class,'create'])->middleware('auth');
 Route::get('pendapatan-edit-{pendapatan}',[PendapatanController::class,'edit'])->middleware('auth');
 
+
+
+//edit Route, implementasi javascript fetch
+
 Route::get('test',[TestController::class,'index']);
+
+Route::get('get-data-user',[UserController::class,'getData'])->middleware('auth');
+Route::resource('users', UserController::class)->middleware('auth');

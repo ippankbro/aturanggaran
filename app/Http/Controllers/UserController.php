@@ -18,7 +18,8 @@ class UserController extends Controller
         //
         return view('user.index',[
             'title'=>'Master User',
-            'users'=> User::all()
+            'users'=> User::all(),
+            'page' => 'user'
         ]);
     }
 
@@ -119,5 +120,8 @@ class UserController extends Controller
         //
         User::destroy($user->id);
         return redirect('/users')->with('success', 'Hapus data berhasil');
+    }
+    public function getData(){
+        return User::all();
     }
 }
