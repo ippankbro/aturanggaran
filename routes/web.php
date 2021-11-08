@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SumberController;
@@ -57,3 +58,5 @@ Route::get('pengeluaran-edit-{pengeluaran}',[PengeluaranController::class,'edit'
 Route::resource('pendapatans', PendapatanController::class)->middleware('auth');
 Route::get('pendapatan-tambah',[PendapatanController::class,'create'])->middleware('auth');
 Route::get('pendapatan-edit-{pendapatan}',[PendapatanController::class,'edit'])->middleware('auth');
+
+Route::get('test',[TestController::class,'index']);
