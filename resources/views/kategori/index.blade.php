@@ -46,8 +46,8 @@
           <th>aksi</th>
         </tr>
       </thead>
-      <tbody>
-        @foreach ( $kategoris as $kategori)
+      <tbody class="data-table">
+        <!-- @foreach ( $kategoris as $kategori)
         <tr>
           <th>{{$loop->iteration}}</th>
           <td>{{$kategori->nama}}</td>
@@ -62,7 +62,7 @@
             </form>
           </td>
         </tr>
-        @endforeach
+        @endforeach -->
       </tbody>
     </table>
   </div>

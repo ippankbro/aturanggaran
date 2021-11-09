@@ -64,6 +64,7 @@ Route::get('pendapatan-edit-{pendapatan}',[PendapatanController::class,'edit'])-
 //edit Route, implementasi javascript fetch
 
 Route::get('test',[TestController::class,'index']);
+Route::post('test',[TestController::class,'postDataTest']);
 Route::get('get-data-kategori',[KategoriController::class,'getData'])->middleware('auth');
 
 Route::get('get-data-user',[UserController::class,'getData'])->middleware('auth');

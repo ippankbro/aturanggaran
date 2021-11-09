@@ -17,7 +17,7 @@
 
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">{{$title}}</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
+    <!-- <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group me-2">
 
         <a class="btn btn-sm btn-outline-primary" href="/user-tambah" role="button">Tambah data</a>
@@ -27,7 +27,8 @@
         <span data-feather="calendar"></span>
         This week
       </button>
-    </div>
+    </div> -->
+    @include('partial.toolbar')
   </div>
 
   <!-- Container -->
@@ -44,12 +45,11 @@
           <th>#</th>
           <th>Nama</th>
           <th>email</th>
-          <th>Flag Pemilik kas</th>
           <th>aksi</th>
         </tr>
       </thead>
-      <tbody>
-        @foreach ( $users as $user)
+      <tbody class="data-table">
+        <!-- @foreach ( $users as $user)
         <tr>
           <th>{{$loop->iteration}}</th>
           <td>{{$user->name}}</td>
@@ -64,11 +64,32 @@
             </form>
           </td>
         </tr>
-        @endforeach
+        @endforeach -->
       </tbody>
     </table>
   </div>
   <!-- Container End -->
+
+
+  <div class="modal fade" id="addmodal" tabindex="-1" aria-labelledby="addmodalLable" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addmodalLable">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @include('user.tambah')
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </main>
 @endsection
