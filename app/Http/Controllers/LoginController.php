@@ -10,7 +10,8 @@ class LoginController extends Controller
     //
     public function index(){
         return view('login.index',[
-            'title'=>'Login Page'
+            'title'=>'Login Page',
+            'page' => 'login'
         ]);
     }
     public function authenticate(Request $request){

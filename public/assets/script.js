@@ -1,36 +1,30 @@
 
-
-
-// function dataTest() {
-//     return fetch('/test')
-//         .then(response => response.json())
-//         .then(response => response);
-// }
-
-
-// async function cetakData() {
-//     const data = await dataTest();
-//     data.forEach(d => {
-//         console.log(`nama : ${d.name}
-//         email : ${d.email}`);
-//     });
-// }
-
-// const btn = document.getElementById('share');
-
-// btn.addEventListener('click', () => cetakData());
+const colList = {
+    "user": ['name', 'email'],
+    "kategori": ['nama', 'catatan', 'type']
+}
 
 function fetchData(page) {
+    page = 'get-data-' + page;
     return fetch(page)
         .then(response => response.json())
         .then(response => response);
 }
-async function getData(page) {
+async function loadData(page, col) {
+    const str = '';
     const data = await fetchData(page);
-    console.log(data);
+    data.forEach(d => {
+        col[page].forEach(c => {
+            console.log(d[c]);
+        });
+    });
 }
 
 const page = document.querySelector('meta[name=page]').getAttribute('content');
 
+loadData(page, colList);
 
-getData(`get-data-${page}`);
+
+// colList[page].forEach(col => {
+//     console.log(col);
+// });

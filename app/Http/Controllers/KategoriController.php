@@ -19,6 +19,7 @@ class KategoriController extends Controller
         return view('kategori.index',[
             'title'=>'Master Kategori',
             'kategoris'=> Kategori::all(),
+            'page' => 'kategori'
             
         ]);
     }
@@ -123,5 +124,8 @@ class KategoriController extends Controller
         //
         Kategori::destroy($kategori->id);
         return redirect('/kategoris')->with('success', 'Hapus data berhasil');
+    }
+    public function getData(){
+        return Kategori::all();
     }
 }
