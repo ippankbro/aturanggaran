@@ -46,16 +46,30 @@ class UserController extends Controller
     {
         //
         
-        $validatedData = $request->validate([
-            'name'=> 'required|min:3|max:255',
-            'email'=>'required|unique:users|email:dns',
-            'password'=>'required'
-        ]);
-    $validatedData['password'] = Hash::make($validatedData['password']);
+    //   $validatedData = $request->validate([
+    //         'name'=> 'required|min:3|max:255',
+    //         'email'=>'required|unique:users|email:dns',
+    //         'password'=>'required'
+    //     ]);
+    // $validatedData['password'] = Hash::make($validatedData['password']);
 
-    User::create($validatedData);
-    // $request->session()->flash('success', 'Registrasi berhasil silahkan login');
-    return redirect('users')->with('success', 'Tambah data user berhasil');
+    // User::create($request);
+    // // // $request->session()->flash('success', 'Registrasi berhasil silahkan login');
+    // return redirect('users')->with('success', 'Tambah data user berhasil');
+
+        $order = new Order();
+        $order->id=$request->json('id');
+        $order->name=$request->json('name');
+        $order->email=$request->json('email');
+        $order->save(); 
+
+
+
+
+        return $order;
+        // return $request;
+
+
     }
 
     /**

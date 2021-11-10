@@ -16,10 +16,10 @@ class TestController extends Controller
 
     public function postDataTest(Request $request){
 
-        // return $request;
+        return $request;
         // return User::all();
-        $data = ["a"=>"aba"];
-        return $data;
+        // $data = ["a"=>"aba"];
+        // return $data;
 
     }
 }

@@ -99,14 +99,41 @@ async function postData(url = '', data = {}) {
     return response.json(); // parses JSON response into native JavaScript objects
 }
 
+// const t = [{
+//     answer: 42,
+//     b: 'asdf',
+// }]
+
+
+// postData('test', t)
+//     .then(data => {
+//         console.log(data); // JSON data parsed by `data.json()` call
+//     });
 
 
 
 
-postData('test', { answer: 42 })
-    .then(data => {
-        console.log(data); // JSON data parsed by `data.json()` call
+// console.log(dataForm)
+var myModal = new bootstrap.Modal(document.getElementById('addmodal'))
+const btnSimpan = document.querySelector('.btn-simpan');
+btnSimpan.addEventListener('click', () => {
+    const addData = document.querySelectorAll('input.add');
+    const dataForm = {};
+
+    addData.forEach(d => {
+        dataForm[d.getAttribute('name')] = d.value
     });
+    dataForm['_token'] = dataToken;
+    postData(page + 's', [dataForm])
+        .then(data => {
+            console.log(data); // JSON data parsed by `data.json()` call
+        });
+
+    // myModal.hide();
+    // loadData(page, colList, dataTable)
+
+});
+
 
 
 
